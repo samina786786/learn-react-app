@@ -20,9 +20,14 @@ function CompanyProfile(props) {
         'CEO': 'Timothy D. Cook'
     }
 
+    const listStyle = {
+        color: 'red',
+        borderBottom: '2px dashed'
+    }
+
     return (
         <div>
-            <div>Profile of: {/**✏️ display stock ticker here*/}</div>
+            <div style={{backgroundColor: "green", color: 'white'}}>Profile of: {stockTicker}</div>
             <hr/>
             <div>
                 {
@@ -45,6 +50,9 @@ function CompanyProfile(props) {
                      * 🧭 Remember to use curly braces inside the div to render
                      * any text content you want
                      */
+                    Object.keys(companyProfileInfo).map((key, idx) => <div style={listStyle}>
+                        {key}: {companyProfileInfo[key]}
+                    </div>)
                 }
             </div>
         </div>
